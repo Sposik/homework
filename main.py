@@ -9,7 +9,7 @@ data = [
 ]
 
 
-print(get_date("2024-03-11T02:26:18.671407"))
+print(get_date(""))
 print(mask_account_card("Visa Classic 6831982476737658"))
 print(sort_by_date(data, reverse=False))
 print(filter_by_state(data, state="CANCELED"))
