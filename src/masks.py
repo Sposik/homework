@@ -19,3 +19,4 @@ def get_mask_account(number: Union[int, str]) -> str:
     if len(number) != 20:
         raise ValueError("Проверьте номер счета")
     return f"**{number[-4:]}"
+
