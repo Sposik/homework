@@ -29,9 +29,9 @@ def mask_account_card(number: str) -> str:
 
 
 def get_date(date: str) -> str:
-    if len(date) < 19 or date[4] != '-' or date[7] != '-' or date[10] not in ('T', ' '):
+    if len(date) < 19 or date[4] != "-" or date[7] != "-" or date[10] not in ("T", " "):
         raise ValueError("Дата должна быть в формате YYYY-MM-DDThh:mm:ss")
 
     date_part = date[:10]
-    year, month, day = date_part.split('-')
+    year, month, day = date_part.split("-")
     return f"{day}.{month}.{year}"

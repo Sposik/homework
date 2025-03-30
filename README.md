@@ -72,4 +72,3 @@ print(masked_card)  # Visa Classic 1234 56** **** 5678
 # Корректировка формата даты
 formatted_date = get_date("2023-10-01T12:34:56.789Z")
 print(formatted_date)  # 01.10.2023
-
