@@ -17,7 +17,7 @@ print(sort_by_date(data, reverse=False))
 print(filter_by_state(data, state="CANCELED"))
 print(get_mask_card_number("1234567890123456"))
 
-for card_number in card_number_generator(1, 5):
+for card_number in card_number_generator("-", "0"):
     print(card_number)
 
 descriptions = transaction_descriptions(transactions)
