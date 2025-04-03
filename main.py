@@ -1,7 +1,7 @@
-from src.generators import card_number_generator, transaction_descriptions, transactions, filter_by_currency
+from src.generators import card_number_generator, filter_by_currency, transaction_descriptions, transactions
 from src.masks import get_mask_card_number
 from src.processing import filter_by_state, sort_by_date
-from src.widget import get_date, mask_account_card
+from src.widget import mask_account_card
 
 data = [
     {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
@@ -11,13 +11,12 @@ data = [
 ]
 
 
-
 print(mask_account_card("Visa Classic 6831982476737658"))
 print(sort_by_date(data, reverse=False))
 print(filter_by_state(data, state="CANCELED"))
 print(get_mask_card_number("1234567890123456"))
 
-for card_number in card_number_generator("-", "0"):
+for card_number in card_number_generator(1, 3):
     print(card_number)
 
 descriptions = transaction_descriptions(transactions)
