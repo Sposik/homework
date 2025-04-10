@@ -1,0 +1,5 @@
+
+Начало выполнения функции get_mask_card_number.
+get_mask_card_number error ValueError  inputs: ('12345',), {}.
+Начало выполнения функции get_mask_card_number.
+ get_mask_card_number ok
