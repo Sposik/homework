@@ -1,6 +1,6 @@
-import os
 import pytest
-from src.decorators import  log
+
+from src.decorators import log
 
 
 def test_log_to_console(capsys):
@@ -43,7 +43,7 @@ def test_log_to_file(tmp_path):
 
     result = multiply(3, 4)
 
-    with open(filename, 'r', encoding='utf-8') as f:
+    with open(filename, "r", encoding="utf-8") as f:
         content = f.read()
         assert "Начало выполнения функции multiply." in content
         assert " multiply ok" in content

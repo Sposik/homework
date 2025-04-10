@@ -1,4 +1,3 @@
-from cmath import log10
 from typing import Union
 
 from src.decorators import log
