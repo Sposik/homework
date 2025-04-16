@@ -1,3 +1,4 @@
+import json
 from typing import Dict, List
 
 import pytest
@@ -91,3 +92,36 @@ def transactions_list() -> List[Dict]:
             "to": "Счет 14211924144426031657",
         },
     ]
+
+
+@pytest.fixture
+def temp_json_file(tmp_path):
+    # Создаем временный файл с корректными данными
+    valid_data = [{"id": 1, "name": "Test"}, {"id": 2, "name": "Example"}]
+    file_path = tmp_path / "test.json"
+    with open(file_path, "w", encoding="utf8") as f:
+        json.dump(valid_data, f)
+    return file_path
+
+
+@pytest.fixture
+def broken_json_file(tmp_path):
+    file_path = tmp_path / "broken.json"
+    with open(file_path, "w", encoding="utf8") as f:
+        f.write('{"id": 1, "name": "Test"')  # Незакрытая скобка
+    return file_path
+
+
+@pytest.fixture
+def rub_transaction():
+    return {"operationAmount": {"amount": "1000.00", "currency": {"code": "RUB"}}}
+
+
+@pytest.fixture
+def usd_transaction():
+    return {"operationAmount": {"amount": "100.00", "currency": {"code": "USD"}}}
+
+
+@pytest.fixture
+def eur_transaction():
+    return {"operationAmount": {"amount": "50.00", "currency": {"code": "EUR"}}}
