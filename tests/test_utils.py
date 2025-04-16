@@ -12,10 +12,10 @@ def test_open_js_success(temp_json_file):
 def test_open_js_file_not_found():
     """Тест обработки отсутствующего файла"""
     result = open_js("nonexistent_file.json")
-    assert result == {}
+    assert result == []
 
 
 def test_open_js_invalid_json(broken_json_file):
     """Тест обработки битого JSON-файла"""
     result = open_js(broken_json_file)
-    assert result == {}
+    assert result == []

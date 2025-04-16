@@ -8,4 +8,4 @@ def open_js(path):
             data = json.load(f)
         return data
     except (FileNotFoundError, json.JSONDecodeError, TypeError, ValueError, KeyError):
-        return {}
+        return []
