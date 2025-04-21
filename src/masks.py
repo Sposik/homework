@@ -1,6 +1,9 @@
 from typing import Union
 
+from src.decorators import log
 
+
+@log()
 def get_mask_card_number(number: Union[int, str]) -> str:
     """Функция маскировки номера банковской карты"""
     number = str(number).replace(" ", "")

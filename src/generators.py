@@ -32,6 +32,6 @@ def card_number_generator(start: int = 1, end: int = 3) -> Generator[str, None, 
     current = start
     while current <= end:
         card_number = f"{current:016d}"
-        formatted_number = " ".join([card_number[i:i + 4] for i in range(0, 16, 4)])
+        formatted_number = " ".join([card_number[i : i + 4] for i in range(0, 16, 4)])
         yield formatted_number
         current += 1
