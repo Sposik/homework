@@ -1,4 +1,5 @@
 import os
+
 import requests
 from dotenv import load_dotenv
 
@@ -14,14 +15,10 @@ def transaction_amount(transaction):
     if transaction["operationAmount"]["currency"]["code"] == "RUB":
         return float(amount)
     elif transaction["operationAmount"]["currency"]["code"] == "USD":
-        response = requests.get(
-            "https://api.apilayer.com/exchangerates_data/convert?", params=params, headers=headers
-        )
+        response = requests.get("https://api.apilayer.com/exchangerates_data/convert?", params=params, headers=headers)
         recived_data = response.json()
         return float(recived_data["result"])
     elif transaction["operationAmount"]["currency"]["code"] == "EUR":
-        response = requests.get(
-            "https://api.apilayer.com/exchangerates_data/convert?", params=params, headers=headers
-        )
+        response = requests.get("https://api.apilayer.com/exchangerates_data/convert?", params=params, headers=headers)
         recived_data = response.json()
         return float(recived_data["result"])
