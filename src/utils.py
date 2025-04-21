@@ -24,4 +24,4 @@ def open_js(path):
         logger.info("Завершение работы")
 
 
-open_js("../Data/opertions.json")
+
