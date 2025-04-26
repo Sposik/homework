@@ -37,6 +37,3 @@ def get_mask_account(number: Union[int, str]) -> str:
     result = f"**{number[-4:]}"
     logger.info(f"функция завершила работу с результатом {result}")
     return result
-
-
-
