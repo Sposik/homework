@@ -1,5 +1,6 @@
 def log(filename=None):
     """декоратор лоирования функции"""
+
     def decorator(func):
         def wrapper(*args, **kwargs):
             # Логируем начало выполнения

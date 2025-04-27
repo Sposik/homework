@@ -22,6 +22,3 @@ def open_js(path):
         return []
     finally:
         logger.info("Завершение работы")
-
-
-
