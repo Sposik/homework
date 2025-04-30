@@ -47,18 +47,20 @@ def search_transactions_by_description(transactions, search_pattern):
     return found_transactions
 
 
-def count_transaction_types(transactions: List[Dict], category_counter: Dict[str, int] = None) -> Dict[str, int]:
+def count_operations_by_category(transactions: List[dict], counts: Dict[str, int]) -> Dict[str, int]:
     """
-    Подсчитывает количество операций по категориям
+    Подсчитывает количество операций по категориям, используя переданный словарь для аккумуляции результатов.
     """
-    # Инициализируем счетчик
-    counter = Counter(category_counter) if category_counter else Counter()
+    descriptions = [t.get("description") for t in transactions if t.get("description") is not None]
 
-    categories = (transaction.get("description", "Неизвестная операция").strip() for transaction in transactions)
+    # Считаем вхождения с помощью Counter
+    current_counts = Counter(descriptions)
 
-    counter.update(categories)
+    # Обновляем переданный словарь
+    for category, count in current_counts.items():
+        counts[category] = counts.get(category, 0) + count
 
-    return dict(counter)
+    return counts
 
 
 def filter_rub_transactions(transactions: list) -> list:
