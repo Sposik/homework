@@ -125,3 +125,24 @@ def usd_transaction():
 @pytest.fixture
 def eur_transaction():
     return {"operationAmount": {"amount": "50.00", "currency": {"code": "EUR"}}}
+
+
+@pytest.fixture
+def mock_transactions():
+    return [
+        {
+            "date": "2023-10-01T12:00:00Z",
+            "description": "Перевод организации",
+            "from": "Счет 12345678901234567890",
+            "to": "Счет 09876543210987654321",
+            "amount": 1000,
+            "currency_code": "RUB",
+        },
+        {
+            "date": "2023-09-15T08:30:00Z",
+            "description": "Открытие вклада",
+            "to": "Счет 5555666677778888",
+            "amount": 5000,
+            "currency_code": "USD",
+        },
+    ]
